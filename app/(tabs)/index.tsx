@@ -63,10 +63,10 @@ const Home = () => {
       tabBarStyle: {
         display: isModalVisible ? "none" : undefined,
         paddingTop: 10,
-        paddingBottom: 5,
+        paddingBottom: 10,
         margin: 0,
-        height: 70,
-        borderTopWidth: 0,
+        height: 75,
+        // borderTopWidth: 0,
 
       },
     });
@@ -269,7 +269,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#0064D2",
   },
   image: {
-    height: 230,
+    height: 220,
     // aspectRatio: 2.75,
     width: "120%",
     // display:"flex",
@@ -289,7 +289,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: "600",
     position: "absolute",
-    top: 125,
+    top: 110,
     left: 24,
   },
 
@@ -336,7 +336,7 @@ const styles = StyleSheet.create({
   },
 
   buttonSearch: {
-    marginTop: 20,
+    marginTop: 16,
     backgroundColor: "#2584e9",
     paddingVertical: 16,
     borderRadius: 14,

@@ -1,5 +1,11 @@
-import { Feather } from "@expo/vector-icons";
-import { Tabs } from "expo-router";
+import {
+  AntDesign,
+  Feather,
+  Ionicons,
+  MaterialIcons,
+} from "@expo/vector-icons";
+import { router, Tabs } from "expo-router";
+import { Pressable } from "react-native";
 
 const Layout = () => {
   return (
@@ -10,10 +16,10 @@ const Layout = () => {
         },
         tabBarStyle: {
           paddingTop: 10,
-            borderTopWidth: 0,
-          paddingBottom: 5,
+          //   borderTopWidth: 0,
+          paddingBottom: 10,
           margin: 0,
-          height: 70,
+          height: 75,
         },
       }}
     >
@@ -29,8 +35,39 @@ const Layout = () => {
           headerTransparent: true,
         }}
       />
-      {/* <Tabs.Screen name="home" /> */}
-      {/* <Tabs.Screen name="home" /> */}
+      <Tabs.Screen
+        name="transactions"
+        options={{
+          title: "Transaction",
+          tabBarLabel: "Transaction",
+          headerLeft: () => (
+            <Pressable
+              onPress={() => router.navigate("/(tabs)")}
+              style={{ marginLeft: 16 }}
+            >
+              <AntDesign name="arrowleft" size={24} />
+            </Pressable>
+          ),
+          headerTintColor: "#000",
+          tabBarIcon: ({ size, color }) => (
+            <MaterialIcons name="payment" size={size} color={color} />
+          ),
+          headerTransparent: true,
+        }}
+      />
+      <Tabs.Screen
+        name="account"
+        options={{
+          title: "Account",
+          tabBarLabel: "Account",
+
+          headerTintColor: "#fff",
+          tabBarIcon: ({ size, color }) => (
+            <Ionicons name="person-outline" size={size} color={color} />
+          ),
+          headerTransparent: true,
+        }}
+      />
     </Tabs>
   );
 };
