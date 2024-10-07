@@ -58,9 +58,17 @@ const Layout = () => {
       <Tabs.Screen
         name="account"
         options={{
-          title: "Account",
+          title: "My Profile",
+          headerTitleAlign: "left",
           tabBarLabel: "Account",
-
+          //   headerLeft: () => (
+          //     <Pressable
+          //       onPress={() => router.navigate("/(tabs)")}
+          //       style={{ marginLeft: 16 }}
+          //     >
+          //       <AntDesign name="arrowleft" size={24} />
+          //     </Pressable>
+          //   ),
           headerTintColor: "#fff",
           tabBarIcon: ({ size, color }) => (
             <Ionicons name="person-outline" size={size} color={color} />
