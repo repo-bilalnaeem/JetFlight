@@ -33,10 +33,10 @@ There are in total 33+ screen files in this project:
 ## Screenshots
 
 <div style="display: flex; flex-direction: 'row';">
-<img src="./assets/screenshots/Thumbnail.png" width=50%>
-<img src="./assets/screenshots/Thumbnail-2.png" width=50%>
-<img src="./assets/screenshots/Thumbnail-5.png" width=50%>
-<img src="./assets/screenshots/Thumbnail-6.png" width=50%>
-<img src="./assets/screenshots/Thumbnail-3.png" width=50%>
-<img src="./assets/screenshots/Thumbnail-4.png" width=50%>
+<img src="./assets/screenshots/Thumbnail.png" width=20%>
+<img src="./assets/screenshots/Thumbnail-2.png" width=20%>
+<img src="./assets/screenshots/Thumbnail-5.png" width=20%>
+<img src="./assets/screenshots/Thumbnail-6.png" width=20%>
+<img src="./assets/screenshots/Thumbnail-3.png" width=20%>
+<img src="./assets/screenshots/Thumbnail-4.png" width=20%>
 </div>
