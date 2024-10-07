@@ -47,7 +47,10 @@ const SignIn = () => {
             </View>
           </View>
           <View style={styles.actionButtons}>
-            <Pressable style={styles.nextButton}>
+            <Pressable
+              style={styles.nextButton}
+              onPress={() => router.replace("/(tabs)")}
+            >
               <Text style={styles.nextText}>Sign in</Text>
             </Pressable>
             <Text
