@@ -1,8 +1,11 @@
+import CustomHeader from "@/components/CustomHeader";
+import { AntDesign } from "@expo/vector-icons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { useFonts } from "expo-font";
-import { Stack } from "expo-router";
+import { router, Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
+import { Pressable, TouchableWithoutFeedback } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import "react-native-reanimated";
 
@@ -38,6 +41,22 @@ const InitialLayout = () => {
   return (
     <Stack>
       <Stack.Screen name="index" options={{ headerShown: false }} />
+      <Stack.Screen
+        name="sign-in"
+        options={{ headerShown: false, title: "Sign In" }}
+      />
+      <Stack.Screen
+        name="sign-up"
+        options={{
+          headerShadowVisible: false,
+          title: "",
+          headerLeft: () => (
+            <Pressable onPress={() => router.back()}>
+              <AntDesign name="arrowleft" size={24} />
+            </Pressable>
+          ),
+        }}
+      />
     </Stack>
   );
 };

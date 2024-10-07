@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import React, { useRef, useState } from "react";
 import { router, Stack } from "expo-router";
-import { onboardingSteps } from "@/utils/slides"; 
+import { onboardingSteps } from "@/utils/slides";
 import { Animated } from "react-native";
 import Paginator from "@/components/Paginator";
 
@@ -37,14 +37,17 @@ const OnBoardingItem = ({
   const handleNext = () => {
     if (screenIndex < onboardingSteps.length - 1) {
       // Scroll to the next index
-      flatListRef.current?.scrollToIndex({ index: screenIndex + 1, animated: true });
+      flatListRef.current?.scrollToIndex({
+        index: screenIndex + 1,
+        animated: true,
+      });
     } else {
-      // router.push("/home"); // Example of navigation to home screen
+      router.replace("/sign-in"); // Example of navigation to home screen
     }
   };
 
   const handleSkip = () => {
-    // router.push("/home"); // Skip and go to home screen
+    router.replace("/sign-in"); // Skip and go to home screen
   };
 
   const WIDTH = useWindowDimensions().width;
@@ -78,7 +81,7 @@ const OnBoardingItem = ({
 const OnboardingScreen = () => {
   const [screenIndex, setScreenIndex] = useState(0);
   const scrollX = useRef(new Animated.Value(0)).current;
-  const flatListRef = useRef<FlatList<any>>(null); 
+  const flatListRef = useRef<FlatList<any>>(null);
   const viewableItemChanged = useRef(({ viewableItems }: any) => {
     if (viewableItems.length > 0) {
       setScreenIndex(viewableItems[0].index);
@@ -88,7 +91,7 @@ const OnboardingScreen = () => {
   return (
     <SafeAreaView style={styles.screen}>
       <FlatList
-        ref={flatListRef} 
+        ref={flatListRef}
         data={onboardingSteps}
         renderItem={({ item }) => (
           <OnBoardingItem
