@@ -79,6 +79,7 @@ const Flights = () => {
   // const renderItem = ({item})=><Ticket/>
   const renderItem = ({ item }: any) => (
     <Ticket
+      id={item.id}
       fromCode={item.fromCode}
       fromCity={item.fromCity}
       toCode={item.toCode}

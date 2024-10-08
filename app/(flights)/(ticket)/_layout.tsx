@@ -6,19 +6,18 @@ const Layout = () => {
   return (
     <Stack>
       <Stack.Screen
-        name="index"
+        name="[id]"
         options={{
-          headerTitle: "Search Flights",
+          headerTitle: "",
+          headerTintColor: "#000",
           headerTransparent: true,
-          headerTintColor: "#fff",
           headerLeft: () => (
             <Pressable onPress={() => router.back()}>
-              <AntDesign name="arrowleft" size={24} color="#fff" />
+              <AntDesign name="arrowleft" size={24} color="#000" />
             </Pressable>
           ),
         }}
       />
-      <Stack.Screen name="(ticket)" options={{ headerShown: false }} />
     </Stack>
   );
 };

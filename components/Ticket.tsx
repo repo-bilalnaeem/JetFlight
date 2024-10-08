@@ -1,8 +1,9 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 import { Divider } from "react-native-paper";
 import { Ionicons } from "@expo/vector-icons";
 import Svg, { Circle, Line } from "react-native-svg";
+import { Href, router } from "expo-router";
 
 interface TicketProps {
   toCode: string;
@@ -15,6 +16,7 @@ interface TicketProps {
   departureDate: string;
   arrivalDate: string;
   price: number;
+  id: number;
 }
 
 const Ticket = ({
@@ -28,9 +30,13 @@ const Ticket = ({
   arrivalDate,
   arrivalTime,
   price,
+  id,
 }: TicketProps) => {
   return (
-    <View style={styles.ticketContainer}>
+    <Pressable
+      style={styles.ticketContainer}
+      onPress={() => router.push(`/(flights)(ticket)${id}` as Href)}
+    >
       <View style={styles.punchHoleLeft}>
         <Svg height="32" width="32">
           <Circle cx="16" cy="16" r="16" fill="#0064D2" />
@@ -108,7 +114,7 @@ const Ticket = ({
           <Circle cx="16" cy="16" r="16" fill="#0064D2" />
         </Svg>
       </View>
-    </View>
+    </Pressable>
   );
 };
 
