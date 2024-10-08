@@ -18,6 +18,7 @@ import BottomSheet, {
 import { Ionicons } from "@expo/vector-icons";
 import { Calendar } from "react-native-calendars";
 import { useNavigation } from "@react-navigation/native";
+import { router } from "expo-router";
 
 const RadioButton = ({
   selected,
@@ -67,7 +68,6 @@ const Home = () => {
         margin: 0,
         height: 75,
         // borderTopWidth: 0,
-
       },
     });
   }, [isModalVisible]);
@@ -188,7 +188,10 @@ const Home = () => {
                       style={styles.inputText}
                     />
                   </View>
-                  <Pressable style={styles.buttonSearch}>
+                  <Pressable
+                    style={styles.buttonSearch}
+                    onPress={() => router.push("/(flights)")}
+                  >
                     <Text style={styles.buttonText}>Search Flights</Text>
                   </Pressable>
                 </View>
@@ -298,7 +301,7 @@ const styles = StyleSheet.create({
   },
 
   bottomSheetContainer: {
-    marginTop:5,
+    marginTop: 5,
     marginHorizontal: 20,
     flexDirection: "column",
     gap: 16,
