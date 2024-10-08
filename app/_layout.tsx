@@ -58,6 +58,7 @@ const InitialLayout = () => {
         }}
       />
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen name="(account)" options={{ headerShown: false }} />
     </Stack>
   );
 };
